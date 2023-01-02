@@ -1,0 +1,17 @@
+argcomplete==2.0.0
+asgiref==3.6.0
+Babel==2.9.1
+Beaker==1.10.0
+beautifulsoup4==4.11.0
+blivet==3.4.4
+cffi==1.15.0
+chardet==4.0.0
+charset-normalizer==2.0.11
+click==8.0.4
+cryptography==36.0.0
+dasbus==1.6
+pycparser==2.21
+pytz==2022.7
+pyudev==0.24.0
+six==1.16.0
+soupsieve==2.3.2.post1
