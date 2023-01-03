@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {% load placeholder %}
+    <title>Регистрация</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="aside">
+        <img class="aside__img" src="../static/img/reg_bg.png" alt="">
+    </div>
+    <div class="form-content">
+        <h1>Зарегистрироваться</h1>
+        <form action="" method="POST">
+            {{ form.username | placeholder:'Имя пользователя' }}
+            {{ form.email | placeholder:'Почта' }}
+            {{ form.password1 | placeholder:'Пароль' }}
+            {{ form.password2 | placeholder:'Подтверждение пароля' }}
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
