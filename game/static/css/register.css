@@ -70,10 +70,21 @@ h1 {
 
 .main-side__h1 {
     display: inline-block;
-    margin-left: 50px;
-    text-align: left;
 }
 
+.main-side__link {
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 20px;
+    font-family: Montserrat, sans-serif;
+}
+
+.main-side__link a {
+    text-decoration: none;
+    color: #1D1E42;
+}
 /**/
 
 .custom-checkbox {
