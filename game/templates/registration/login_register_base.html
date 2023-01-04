@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    {% load placeholder %}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_register_base.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="aside">
+        <div class="aside__h1"><h1>Играй и ставь новые рекорды вместе с нами!</h1></div>
+        <img class="aside__img" src="/static/img/reg_bg.png" alt="">
+    </div>
+    <div class="main-side">
+        {% block main %}
+            <div class="main-side__h1"><h1>Зарегистрироваться</h1></div>
+            <div class="main-side__h1"><h1></h1></div>
+            <div class="main-side__button">
+                <button type="submit" form="user-inputs-form"></button>
+            </div>
+            <div class="main-side__link"><a href="#"></a></div>
+            </div>
+        {% endblock %}
+</div>
+</body>
+</html>

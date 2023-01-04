@@ -1,0 +1,31 @@
+{% extends "registration/login_register_base.html" %}
+{% load static %}
+{% load placeholder %}
+{% block title %}
+    {{ "Регистрация" }}
+{% endblock %}
+
+{% block main %}
+    <div class="main-side__form">
+        <h1>Зарегистрироваться</h1>
+        <form action="" method="POST" id="user-inputs-form">
+            {% csrf_token %}
+            {{ form.username | placeholder:'Имя пользователя' }}
+            {{ form.email | placeholder:'Электронная почта' }}
+            {{ form.password1 | placeholder:'Придумайте пароль' }}
+            {{ form.password2 | placeholder:'Повторите пароль' }}
+            {{ form.email.errors }}
+            {{ form.username.errors }}
+            {{ form.password1.errors }}
+            {{ form.password2.errors }}
+            <div class="form-check">
+                <input type="checkbox" class="custom-checkbox" id="checkbox1" name="agreement" value="yes" required>
+                <label for="checkbox1">Согласие на обработку данных</label>
+            </div>
+        </form>
+        <div class="main-side__button">
+            <button type="submit" form="user-inputs-form">Далее</button>
+        </div>
+        <div class="main-side__link">Уже есть аккаунт?<a href="{% url 'login' %} "> {{ "Войти" }}</a></div>
+    </div>
+{% endblock %}

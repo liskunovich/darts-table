@@ -1,0 +1,25 @@
+{% extends "registration/login_register_base.html" %}
+{% load static %}
+{% load placeholder %}
+{% block title %}
+    {{ "Вход" }}
+{% endblock %}
+{% block main %}
+    <div class="main-side__form">
+        <h1>Вход</h1>
+        <form action="{% url 'login' %}" method="POST" id="user-inputs-form">
+            {% csrf_token %}
+            {{ form.username | placeholder:'Имя пользователя' }}
+            {{ form.password | placeholder:'Пароль' }}
+            {{ form.non_field_errors}}
+            {#            <div class="form-check">#}
+            {#                <input type="checkbox" class="custom-checkbox" id="checkbox1" name="agreement" value="yes" required>#}
+            {#                <label for="checkbox1">Согласие на обработку данных</label>#}
+            {#            </div>#}
+        </form>
+        <div class="main-side__button">
+            <button type="submit" form="user-inputs-form">Войти</button>
+        </div>
+        <div class="main-side__link">Забыли пароль?<a href="#"> Восстановить</a></div>
+    </div>
+{% endblock %}
