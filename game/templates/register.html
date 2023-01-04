@@ -10,23 +10,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="aside">
+        <div class="aside__h1"><h1>Играй и ставь новые рекорды вместе с нами!</h1></div>
         <img class="aside__img" src="../static/img/reg_bg.png" alt="">
     </div>
-    <div class="form-content">
-        <h1>Зарегистрироваться</h1>
-        <form action="" method="POST">
-            {{ form.username | placeholder:'Имя пользователя' }}
-            {{ form.email | placeholder:'Почта' }}
-            {{ form.password1 | placeholder:'Пароль' }}
-            {{ form.password2 | placeholder:'Подтверждение пароля' }}
-        </form>
+    <div class="main-side">
+        <div class="main-side__h1"><h1>Зарегистрироваться</h1></div>
+        <div class="main-side__form">
+            <form action="" method="POST">
+                {{ form.username | placeholder:'Имя пользователя' }}
+                {{ form.email | placeholder:'Электронная почта' }}
+                {{ form.password1 | placeholder:'Придумайте пароль' }}
+                {{ form.password2 | placeholder:'Повторите пароль' }}
+                <div class="form-check">
+                    <input type="checkbox" class="custom-checkbox" id="checkbox1" name="agreement" value="yes" required>
+                    <label for="checkbox1">Нажимая на кнопку, я соглашаюсь с политикой обработки персональных данных и
+                        принимаю правила пользования платформой</label>
+                </div>
+            </form>
+        </div>
+        <div class="main-side__button">
+            <button type="submit">Далее</button>
+        </div>
     </div>
 </div>
-
-
 </body>
 </html>
