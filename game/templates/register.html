@@ -21,20 +21,24 @@
     <div class="main-side">
         <div class="main-side__h1"><h1>Зарегистрироваться</h1></div>
         <div class="main-side__form">
-            <form action="" method="POST">
+            <form action="" method="POST" id="user-inputs-form">
+                {% csrf_token %}
                 {{ form.username | placeholder:'Имя пользователя' }}
                 {{ form.email | placeholder:'Электронная почта' }}
                 {{ form.password1 | placeholder:'Придумайте пароль' }}
                 {{ form.password2 | placeholder:'Повторите пароль' }}
+                {{ form.email.errors }}
+                {{ form.username.errors }}
+                {{ form.password1.errors }}
+                {{ form.password2.errors }}
                 <div class="form-check">
                     <input type="checkbox" class="custom-checkbox" id="checkbox1" name="agreement" value="yes" required>
-                    <label for="checkbox1">Нажимая на кнопку, я соглашаюсь с политикой обработки персональных данных и
-                        принимаю правила пользования платформой</label>
+                    <label for="checkbox1">Согласие на обработку данных</label>
                 </div>
             </form>
         </div>
         <div class="main-side__button">
-            <button type="submit">Далее</button>
+            <button type="submit" form="user-inputs-form">Далее</button>
         </div>
         <div class="main-side__link">Уже есть аккаунт? <a href="#">Войти</a></div>
     </div>
