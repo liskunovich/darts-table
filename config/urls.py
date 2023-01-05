@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from game.views import RegisterFormView
+from game.views import RegisterUser, LoginUser, LogoutUser
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', RegisterFormView.as_view(), name='register'),
-    # path('login/', ),
-    path('main/', include('game.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('register/', RegisterUser.as_view(), name='register'),
+    path('home/', include('game.urls')),
 
 ]
