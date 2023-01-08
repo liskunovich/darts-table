@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            overflow-y: hidden;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: url("../static/img/error_bg.png");
+            background-color: #303060;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+
+        .main {
+            display: flex;
+            width: 40%;
+            height: 100%;
+            text-align: left;
+            margin-bottom: auto;
+            margin-top: 300px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .main__h1 {
+
+        }
+
+        .main__h1 h1 {
+            font-family: Montserrat, sans-serif;
+            color: #FFFFFF;
+            font-size: 32px;
+            line-height: 40px;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .main__button {
+            position: absolute;
+            top: 100%;
+            padding-right: 135px;
+        }
+
+        .main__button button {
+            cursor: pointer;
+            height: 59px;
+            color: #FFFFFF;
+            background-color: #624DE3;
+            border: 1px solid #624DE3;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            font-family: Montserrat, sans-serif;
+            font-size: 32px;
+            line-height: 39px;
+            font-style: normal;
+            font-weight: 500;
+            gap: 10px;
+            padding: 10px 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<body>
+<div class="main">
+    <div class="main__h1">
+        <h1>Почти попали! <br> Мы попробуем еще, а <br>Вы пока можете <br>поставить новый <br>рекорд:</h1>
+    </div>
+    <div class="main__button">
+        <a href="{% url 'login' %}">
+            <button type="submit">На главную</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

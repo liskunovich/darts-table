@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from game.views import RegisterUser, LoginUser, LogoutUser
 
+
+handler404 = 'game.views.handler404'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', RegisterUser.as_view(), name='register'),
     path('home/', include('game.urls')),
-
 ]
