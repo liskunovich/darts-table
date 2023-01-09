@@ -4,10 +4,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic, View
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView
 from game.forms import CreateUserForm
-from django.template import RequestContext
-from django.http import HttpResponseNotFound
 
 
 class RegisterUser(generic.CreateView):
@@ -19,7 +17,6 @@ class RegisterUser(generic.CreateView):
         user = form.save()
         login(self.request, user)
         return redirect('/')
-
 
 
 class LoginUser(LoginView):
@@ -47,6 +44,7 @@ def handler404(request, exception, template_name='404.html'):
     response = render(request, template_name, data)
     response.status_code = 404
     return response
+
 
 class MainView(TemplateView):
     template_name = 'home.html'
